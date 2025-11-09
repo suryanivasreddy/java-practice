@@ -1,51 +1,66 @@
-package com.codegnan.controlstatements;
+package Day21practice;
 
 import java.util.Scanner;
 
 public class Fibonacci {
-
+public static int fibonac(int n) {
+	if(n==0)
+		return 0;
+	if(n==1)
+		return 1;
+	return fibonac(n-1)+fibonac(n-2);
+}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner s=new Scanner(System.in);
-		int N=s.nextInt();
-		int n0=0;
-		int n1=1;
-		int temp;
+		int n=s.nextInt();
+		int sr=fibonac(n);
+		System.out.println(sr);
 		
-		System.out.print(n0+" ");
-		System.out.print(n1+" ");
-		N=N-2;
-		while(N>0) {
-			temp=n1;
-			n1=n1+n0;
-			n0=temp;
-			System.out.print(n1+" ");
-			N--;
-		}
+
 	}
 
 }
-/* Fibonacci Series – Nature Sequence Generator
-
-Scenario:
-A biology simulator models growth patterns using Fibonacci numbers.
-
-Sample Input:
-7
-Sample Output:
-0 1 1 2 3 5 8
 
 
-Test Cases:
+/*
 
-testcase-1
-Input: 5
-Output: 0 1 1 2 3
+At CodeCamp, learner Mia is creating a Java program to generate Fibonacci numbers for a sequence project.
+ She needs a recursive method to compute the nth Fibonacci number, where each number is the sum of the two preceding ones:
+F(0) = 0  
+F(1) = 1  
+F(n) = F(n-1) + F(n-2)
 
-testcase-2
-Input: 8
-Output: 0 1 1 2 3 5 8 13
+The method should handle base cases and ensure results fit within constraints.
+ Mia wants to call this method from main() to test multiple inputs.
+ The recursive approach should break down the problem into smaller subproblems.
+ With a coding contest approaching, Mia needs this method to be correct and efficient.
 
-testcase-3
-Input: 10
-Output: 0 1 1 2 3 5 8 13 21 34*/
+ Input Format
+First line: An integer n (index in Fibonacci sequence).
+
+
+ Output Format
+A long integer: nth Fibonacci number.
+
+
+
+ Testcases
+Testcase 1
+Input
+5
+Output
+5
+
+Testcase 2
+Input
+10
+Output
+55
+
+Testcase 3
+Input
+0
+Output
+0
+
+*/
